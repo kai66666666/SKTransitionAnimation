@@ -6,6 +6,9 @@ pod 'SKTransitionAnimation'
 import SKTransitionAnimation
 
 let viewCtrl = UIViewController()
+
 self.skPresentViewController(viewCtrl, animationType: .fade)
+
 or
+
 self.navigationController?.skPushViewController(viewCtrl, animationType: .fade)

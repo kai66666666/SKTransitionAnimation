@@ -14,7 +14,7 @@ import UIKit
     case present
     case dismiss
     
-    var isPushOrPresent: Bool {
+    public var isPushOrPresent: Bool {
         get {
             if self == .push || self == .present {
                 return true
@@ -23,7 +23,7 @@ import UIKit
             }
         }
     }
-    var isPushOrPop: Bool {
+    public var isPushOrPop: Bool {
         get {
             if self == .push || self == .pop {
                 return true

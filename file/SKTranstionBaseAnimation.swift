@@ -68,7 +68,8 @@ open class SKTranstionBaseAnimation: NSObject {
         } else if animationType == .fade {
             animation = SKTranstionFadeAnimation()
         } else if animationType == .pointSpread ||
-                    animationType == .randomPointSpread {
+                    animationType == .randomPointSpread ||
+                    animationType == .touchPointSpread {
             animation = SKTranstionPointAnimation()
         } else if animationType == .spreadFromLeft ||
                     animationType == .spreadFromRight ||

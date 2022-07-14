@@ -81,6 +81,16 @@ extension UINavigationController {
         delegate = nil
         return animation
     }
+    @objc
+    public
+    func skPopViewController(_ animationType: SKTransitionAnimationType) {
+        let animation = SKTranstionBaseAnimation.animation(with: animationType)
+        if animation != nil {
+            delegate = animation
+        }
+        popViewController(animated: true)
+        delegate = nil
+    }
     ///使用自定义动画，继承SKTranstionBaseAnimation，使用swift
     @objc public func skPushViewController(_ viewCtrl: UIViewController,
                                            animation: SKTranstionBaseAnimation,
@@ -124,6 +134,14 @@ extension UIViewController {
             self.present(viewCtrl, animated: true, completion: completion)
         }
         return animation
+    }
+    @objc public func skDismiss(_ animationType: SKTransitionAnimationType,
+                                completion: (() -> Void)? = nil) {
+        let animation = SKTranstionBaseAnimation.animation(with: animationType)
+        if animation != nil {
+            transitioningDelegate = animation
+        }
+        dismiss(animated: true, completion: completion)
     }
     ///使用自定义动画，继承SKTranstionBaseAnimation，使用swift
     @objc public func skPresentViewController(_ viewCtrl: UIViewController,

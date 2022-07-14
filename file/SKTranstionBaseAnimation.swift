@@ -36,7 +36,7 @@ import UIKit
 
 open class SKTranstionBaseAnimation: NSObject {
     
-    var operation = SKTranstionOperation.none
+    public var operation = SKTranstionOperation.none
     var animationType = SKTransitionAnimationType.default
     
     public typealias SKTranstionBlock = (_ containerView: UIView, _ operation: SKTranstionOperation) -> Void
@@ -124,11 +124,11 @@ extension SKTranstionBaseAnimation {
     }
 }
 extension SKTranstionBaseAnimation: UIViewControllerAnimatedTransitioning {
-    public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+    open func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.3
     }
     
-    public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) { }
+    open func animateTransition(using transitionContext: UIViewControllerContextTransitioning) { }
 }
 extension SKTranstionBaseAnimation: UIViewControllerTransitioningDelegate {
     public func animationController(forPresented presented: UIViewController,
